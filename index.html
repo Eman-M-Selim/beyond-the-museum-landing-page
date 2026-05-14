@@ -1,0 +1,861 @@
+﻿<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEYOND THE MUSEUM | Explore Egypt</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top museum-navbar">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#home" data-i18n="brand">
+          BEYOND THE MUSEUM
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home" data-i18n="nav_home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#museum" data-i18n="nav_journey">The Journey</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#treasures" data-i18n="nav_treasures">Museum Treasures</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nearby" data-i18n="nav_explore">Explore Cairo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#best-time" data-i18n="nav_best_time">Best Time to Visit</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#legacy" data-i18n="nav_legacy">The Legacy</a>
+            </li>
+          </ul>
+          <div class="language-switch ms-lg-3 mt-3 mt-lg-0">
+            <button type="button" class="btn btn-sm lang-btn active" data-lang="en">EN</button>
+            <button type="button" class="btn btn-sm lang-btn" data-lang="ar">AR</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-content text-white">
+          <span class="hero-badge d-inline-block mb-3" data-i18n="hero_badge">Beyond The Museum Journey</span>
+          <h1 class="hero-title mb-4" data-i18n="hero_title">
+            Start Exploring Egypt From the Museum
+          </h1>
+          <p class="hero-subtitle mb-4" data-i18n="hero_subtitle">
+            Begin your journey through Cairo, then discover the pyramids,
+            historic streets, Nile nights, and the timeless spirit of Egypt.
+          </p>
+          <a href="#museum" class="btn hero-cta-btn btn-lg px-4 py-3" data-i18n="hero_button">
+            Start the Journey
+          </a>
+        </div>
+        <a
+          href="#museum"
+          class="hero-scroll-indicator"
+          aria-label="Scroll to the journey section"
+          data-i18n-aria="hero_scroll_aria"
+        >
+          <span></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Timeline Section: The Journey -->
+    <section id="museum" class="section-padding timeline-section">
+      <div class="container">
+        <div class="section-heading text-center mb-5 reveal-up">
+          <span class="section-chip" data-i18n="journey_chip">Documentary Timeline</span>
+          <h2 class="mt-3 mb-3" data-i18n="journey_title">A Journey Through Egyptian History</h2>
+          <p class="section-subtitle mx-auto mb-0" data-i18n="journey_subtitle">
+            The emotional heart of the journey, where each chapter reveals how
+            Egypt carried its past into the future.
+          </p>
+        </div>
+
+        <div class="timeline-list">
+          <!-- Chapter I -->
+          <article class="timeline-item reveal-up">
+            <div class="row g-4 g-lg-5 align-items-center">
+              <div class="col-lg-5">
+                <div class="media-frame">
+                  <img
+                    src="images/old-museum.jpg"
+                    class="img-fluid media-image"
+                    alt="The Egyptian Museum in Tahrir in 1902"
+                  />
+                  <div class="media-overlay"></div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="story-card glass-card">
+                  <span class="year-badge">1902</span>
+                  <p class="chapter-label mb-2" data-i18n="chapter1_label">Chapter I - The Beginning</p>
+                  <h3 class="h4 mt-2" data-i18n="chapter1_title">The Egyptian Museum in Tahrir</h3>
+                  <p class="mb-0" data-i18n="chapter1_desc">
+                    In the heart of Cairo, the famous red building opened its
+                    doors to the world. The Egyptian Museum in Tahrir became the
+                    guardian of ancient Egyptian civilization, preserving
+                    thousands of priceless artifacts and royal treasures through
+                    time. For decades, visitors walked through its historic
+                    halls, discovering the secrets of one of the greatest
+                    civilizations in human history.
+                  </p>
+                  <p class="timeline-quote mb-0" data-i18n="chapter1_quote">
+                    "A hall of memory where history learned to breathe."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Chapter II -->
+          <article class="timeline-item reveal-up">
+            <div class="row g-4 g-lg-5 align-items-center">
+              <div class="col-lg-5 order-lg-2">
+                <div class="media-frame">
+                  <img
+                    src="images/mummies-parade.jpg"
+                    class="img-fluid media-image"
+                    alt="The Royal Mummies Parade in 2021"
+                  />
+                  <div class="media-overlay"></div>
+                </div>
+              </div>
+              <div class="col-lg-7 order-lg-1">
+                <div class="story-card glass-card">
+                  <span class="year-badge">2021</span>
+                  <p class="chapter-label mb-2" data-i18n="chapter2_label">Chapter II - The Royal Journey</p>
+                  <h3 class="h4 mt-2" data-i18n="chapter2_title">The Royal Mummies Parade</h3>
+                  <p class="mb-0" data-i18n="chapter2_desc">
+                    After more than a century, Egypt witnessed a moment that
+                    amazed the world. Under Cairo's glowing lights, the Royal
+                    Mummies Parade moved through the streets in a breathtaking
+                    procession watched by millions worldwide. Twenty-two royal
+                    mummies were transported from the Egyptian Museum in Tahrir
+                    to the National Museum of Egyptian Civilization in a
+                    celebration worthy of kings and queens.
+                  </p>
+                  <p class="timeline-quote mb-0" data-i18n="chapter2_quote">
+                    "A procession of eternity beneath the lights of Cairo."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Chapter III -->
+          <article class="timeline-item reveal-up">
+            <div class="row g-4 g-lg-5 align-items-center">
+              <div class="col-lg-5">
+                <div class="media-frame">
+                  <img
+                    src="images/grand-egyptian-museum.jpg"
+                    class="img-fluid media-image"
+                    alt="The Grand Egyptian Museum in 2024"
+                  />
+                  <div class="media-overlay"></div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="story-card glass-card">
+                  <span class="year-badge">2024</span>
+                  <p class="chapter-label mb-2" data-i18n="chapter3_label">Chapter III - A New Era</p>
+                  <h3 class="h4 mt-2" data-i18n="chapter3_title">The Grand Egyptian Museum</h3>
+                  <p class="mb-0" data-i18n="chapter3_desc">
+                    Near the timeless Pyramids of Giza, a new chapter of history
+                    began. The Grand Egyptian Museum emerged as a symbol of the
+                    future, where modern architecture meets ancient heritage and
+                    advanced technology. Designed to become the largest
+                    archaeological museum dedicated to a single civilization, it
+                    continues Egypt's story for future generations.
+                  </p>
+                  <p class="timeline-quote mb-0" data-i18n="chapter3_quote">
+                    "The future of heritage rising beside the oldest wonders."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Museum Treasures Section -->
+    <section id="treasures" class="section-padding wonders-section">
+      <div class="container">
+        <div class="section-heading text-center mb-5 reveal-up">
+          <span class="section-chip" data-i18n="treasures_chip">Museum Collection</span>
+          <h2 class="mt-3 mb-3" data-i18n="treasures_title">Museum Treasures</h2>
+          <p class="section-subtitle mx-auto mb-0" data-i18n="treasures_subtitle">
+            Discover the iconic masterpieces preserved in the museum's
+            galleries.
+          </p>
+        </div>
+
+        <div class="wonders-pills d-flex flex-wrap justify-content-center gap-2 mb-4 reveal-up">
+          <span class="wonders-pill active" data-i18n="pill_all">All</span>
+          <span class="wonders-pill" data-i18n="pill_kings">Kings</span>
+          <span class="wonders-pill" data-i18n="pill_treasures">Treasures</span>
+        </div>
+
+        <div class="row g-4">
+          <!-- Wonder 1 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="wonder-card reveal-up h-100">
+              <div class="media-frame">
+                <img src="images/tutankhamun.jpg" class="img-fluid media-image" alt="Tutankhamun golden mask" />
+                <div class="media-overlay gold"></div>
+              </div>
+              <div class="wonder-body">
+                <h3 class="h4 mb-2" data-i18n="treasure1_title">Tutankhamun</h3>
+                <p class="mb-0" data-i18n="treasure1_desc">
+                  The golden mask of the young king remains one of the most iconic treasures of ancient Egypt.
+                </p>
+                <a href="#legacy" class="btn wonder-btn btn-sm mt-3" data-i18n="discover_more">Discover More</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Wonder 2 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="wonder-card reveal-up h-100">
+              <div class="media-frame">
+                <img src="images/royal-mummies.jpg" class="img-fluid media-image" alt="Royal mummies of ancient Egypt" />
+                <div class="media-overlay gold"></div>
+              </div>
+              <div class="wonder-body">
+                <h3 class="h4 mb-2" data-i18n="treasure2_title">Royal Mummies</h3>
+                <p class="mb-0" data-i18n="treasure2_desc">
+                  Preserved for thousands of years, the royal mummies carry the legacy of Egypt's greatest rulers.
+                </p>
+                <a href="#legacy" class="btn wonder-btn btn-sm mt-3" data-i18n="discover_more">Discover More</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Wonder 3 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="wonder-card reveal-up h-100">
+              <div class="media-frame">
+                <img src="images/ramses-statue.jpg" class="img-fluid media-image" alt="Statue of Ramses II" />
+                <div class="media-overlay gold"></div>
+              </div>
+              <div class="wonder-body">
+                <h3 class="h4 mb-2" data-i18n="treasure3_title">Ramses II</h3>
+                <p class="mb-0" data-i18n="treasure3_desc">
+                  One of the most powerful pharaohs in Egyptian history, remembered through colossal statues and legendary temples.
+                </p>
+                <a href="#legacy" class="btn wonder-btn btn-sm mt-3" data-i18n="discover_more">Discover More</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Cairo Section -->
+    <section id="nearby" class="section-padding nearby-section">
+      <div class="container">
+        <div class="section-heading text-center mb-5 reveal-up">
+          <span class="section-chip" data-i18n="explore_chip">Beyond The Museum</span>
+          <h2 class="mt-3 mb-3" data-i18n="explore_title">Explore Cairo</h2>
+          <p class="section-subtitle mx-auto mb-0" data-i18n="explore_subtitle">
+            Continue your journey through Cairo after visiting the museum.
+          </p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Right: Cinematic image panel -->
+          <div class="col-lg-7 order-lg-2">
+            <article class="explore-stage reveal-up">
+              <div class="explore-image-wrap">
+                <img
+                  id="explore-main-image"
+                  src="images/pyramids-giza.jpg"
+                  class="img-fluid explore-main-image"
+                  alt="The Great Pyramids of Giza"
+                />
+                <div class="explore-image-overlay"></div>
+              </div>
+              <div class="explore-caption glass-card">
+                <h3 id="explore-main-title" class="h4 mb-2">
+                  The Great Pyramids of Giza
+                </h3>
+                <p id="explore-main-description" class="mb-0">
+                  Stand before one of the world's most legendary wonders and
+                  experience the timeless mystery of ancient Egypt.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Left: Interactive attractions list -->
+          <div class="col-lg-5 order-lg-1">
+            <div class="explore-list reveal-up" id="explore-list">
+              <button
+                type="button"
+                class="explore-item active"
+                data-image="images/pyramids-giza.jpg"
+                data-title="The Great Pyramids of Giza"
+                data-description="Stand before one of the world's most legendary wonders and experience the timeless mystery of ancient Egypt."
+                data-title-ar="أهرامات الجيزة"
+                data-description-ar="قف أمام واحدة من أعظم عجائب العالم واكتشف سحر مصر القديمة الخالد."
+              >
+                <span class="explore-item-title">The Great Pyramids of Giza</span>
+              </button>
+
+              <button
+                type="button"
+                class="explore-item"
+                data-image="images/khan-el-khalili.jpg"
+                data-title="Khan El Khalili"
+                data-description="Explore Cairo's historic bazaar filled with lanterns, handmade crafts, traditional cafes, and local culture."
+                data-title-ar="خان الخليلي"
+                data-description-ar="استكشفي سوق القاهرة التاريخي المليء بالفوانيس والمشغولات اليدوية والمقاهي التراثية."
+              >
+                <span class="explore-item-title">Khan El Khalili</span>
+              </button>
+
+              <button
+                type="button"
+                class="explore-item"
+                data-image="images/cairo-tower.jpg"
+                data-title="Cairo Tower"
+                data-description="Enjoy panoramic views of Cairo and the Nile from one of the city's most iconic landmarks."
+                data-title-ar="برج القاهرة"
+                data-description-ar="استمتع بإطلالات بانورامية على القاهرة والنيل من أحد أشهر معالم المدينة."
+              >
+                <span class="explore-item-title">Cairo Tower</span>
+              </button>
+
+              <button
+                type="button"
+                class="explore-item"
+                data-image="images/almuizz-street.jpg"
+                data-title="Al-Muizz Street"
+                data-description="Walk through one of the oldest streets in Islamic Cairo surrounded by stunning historic architecture."
+                data-title-ar="شارع المعز"
+                data-description-ar="تجول في أحد أقدم شوارع القاهرة الإسلامية وسط عمارة تاريخية مذهلة."
+              >
+                <span class="explore-item-title">Al-Muizz Street</span>
+              </button>
+
+              <button
+                type="button"
+                class="explore-item"
+                data-image="images/nile-cruise.jpg"
+                data-title="Nile Dinner Cruise"
+                data-description="Experience Cairo at night with traditional music, local cuisine, and magical Nile views."
+                data-title-ar="رحلة عشاء نيلية"
+                data-description-ar="استمتع بأجواء القاهرة الليلية مع موسيقى تقليدية ومأكولات محلية وإطلالات ساحرة على النيل."
+              >
+                <span class="explore-item-title">Nile Dinner Cruise</span>
+              </button>
+
+              <button
+                type="button"
+                class="explore-item"
+                data-image="images/citadel.jpg"
+                data-title="Muhammad Ali Citadel"
+                data-description="Discover medieval Islamic history and breathtaking views over Cairo."
+                data-title-ar="قلعة محمد علي"
+                data-description-ar="اكتشف التاريخ الإسلامي الوسيط وإطلالات بانورامية رائعة على القاهرة."
+              >
+                <span class="explore-item-title">Muhammad Ali Citadel</span>
+              </button>
+
+              <button
+                type="button"
+                class="explore-item"
+                data-image="images/Coptic-Cairo.webp"
+                data-title="Coptic Cairo"
+                data-description="Explore ancient churches and one of the oldest spiritual areas in Egypt."
+                data-title-ar="مصر القبطية"
+                data-description-ar="اكتشف الكنائس الأثرية وإحدى أقدم المناطق الروحية في مصر."
+              >
+                <span class="explore-item-title">Coptic Cairo</span>
+              </button>
+
+              <button
+                type="button"
+                class="explore-item"
+                data-image="images/cairo-techno-night.jpg"
+                data-title="Cairo Techno Night"
+                data-description="A modern nightlife chapter where music, lights, and urban energy reveal another side of Cairo."
+                data-title-ar="ليلة تكنو القاهرة"
+                data-description-ar="فصل عصري من حياة القاهرة الليلية حيث الموسيقى والأضواء والطاقة الحضرية."
+              >
+                <span class="explore-item-title">Cairo Techno Night</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- Best Time Section -->
+    <section id="best-time" class="section-padding best-time-section">
+      <div class="container">
+        <div class="section-heading text-center mb-5 reveal-up">
+          <span class="section-chip" data-i18n="best_time_chip">Seasonal Guide</span>
+          <h2 class="mt-3 mb-3" data-i18n="best_time_title">Best Time to Visit Egypt</h2>
+          <p class="section-subtitle mx-auto mb-0" data-i18n="best_time_subtitle">
+            Discover the perfect seasons to experience Egypt's history,
+            beaches, Nile cruises, and unforgettable adventures.
+          </p>
+        </div>
+
+        <!-- Bootstrap pills -->
+        <ul
+          class="nav best-time-pills justify-content-center gap-2 mb-4 reveal-up"
+          id="best-time-tabs"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="season-oct-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#season-oct"
+              type="button"
+              role="tab"
+              aria-controls="season-oct"
+              aria-selected="true"
+            >
+              <span data-i18n="season1_range">October &rarr; April</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="season-dec-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#season-dec"
+              type="button"
+              role="tab"
+              aria-controls="season-dec"
+              aria-selected="false"
+            >
+              <span data-i18n="season2_range">December &rarr; February</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="season-jun-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#season-jun"
+              type="button"
+              role="tab"
+              aria-controls="season-jun"
+              aria-selected="false"
+            >
+              <span data-i18n="season3_range">June &rarr; August</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- Cinematic season panel -->
+        <div class="tab-content reveal-up" id="best-time-tabs-content">
+          <div
+            class="tab-pane fade show active"
+            id="season-oct"
+            role="tabpanel"
+            aria-labelledby="season-oct-tab"
+          >
+            <article class="season-panel">
+              <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                  <div class="season-media">
+                    <img
+                      src="images/egypt-winter.jpg"
+                      class="img-fluid season-image"
+                      alt="Egypt in winter season"
+                    />
+                    <div class="season-overlay"></div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="season-body">
+                    <h3 class="h3 mb-3" data-i18n="season1_range">October &rarr; April</h3>
+                    <p class="mb-3" data-i18n="season1_desc">
+                      Cool weather and perfect conditions for exploring Cairo,
+                      Luxor, Aswan, and desert adventures.
+                    </p>
+                    <p class="season-best mb-0">
+                      <span data-i18n="best_for_label">Best for:</span> <span data-i18n="season1_best">Historical tours &amp; outdoor activities</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="season-dec"
+            role="tabpanel"
+            aria-labelledby="season-dec-tab"
+          >
+            <article class="season-panel">
+              <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                  <div class="season-media">
+                    <img
+                      src="images/nile-cruise-sunset.jpg"
+                      class="img-fluid season-image"
+                      alt="Nile cruise at sunset"
+                    />
+                    <div class="season-overlay"></div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="season-body">
+                    <h3 class="h3 mb-3" data-i18n="season2_range">December &rarr; February</h3>
+                    <p class="mb-3" data-i18n="season2_desc">
+                      The ideal season for visiting the pyramids, temples, and
+                      enjoying Nile cruises with mild temperatures.
+                    </p>
+                    <p class="season-best mb-0">
+                      <span data-i18n="best_for_label">Best for:</span> <span data-i18n="season2_best">Sightseeing &amp; Nile cruises</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="season-jun"
+            role="tabpanel"
+            aria-labelledby="season-jun-tab"
+          >
+            <article class="season-panel">
+              <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                  <div class="season-media">
+                    <img
+                      src="images/red-sea-resort.jpg"
+                      class="img-fluid season-image"
+                      alt="Red Sea resort destination"
+                    />
+                    <div class="season-overlay"></div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="season-body">
+                    <h3 class="h3 mb-3" data-i18n="season3_range">June &rarr; August</h3>
+                    <p class="mb-3" data-i18n="season3_desc">
+                      Perfect for Red Sea destinations, beach resorts, diving,
+                      and luxury summer escapes.
+                    </p>
+                    <p class="season-best mb-0">
+                      <span data-i18n="best_for_label">Best for:</span> <span data-i18n="season3_best">Beaches &amp; diving</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Legacy Section -->
+    <section id="legacy" class="legacy-section">
+      <div class="container">
+        <div class="legacy-content text-center text-white reveal-up">
+          <p class="legacy-pretitle mb-2" data-i18n="legacy_pretitle">Final Chapter</p>
+          <h2 class="legacy-title mb-3" data-i18n="legacy_title">The Legacy Lives Forever</h2>
+          <p class="legacy-subtitle mb-4" data-i18n="legacy_subtitle">
+            More than monuments&hellip; Egypt is a story written through time.
+          </p>
+          <a href="#home" class="btn hero-cta-btn btn-lg px-4 py-3" data-i18n="legacy_button">Explore Egypt</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="museum-footer py-4">
+      <div class="container text-center">
+        <p class="mb-0" data-i18n="footer_text">A cinematic journey from the museum to the heart of Cairo.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Explore Cairo Interaction + Language Switch -->
+    <script>
+      (function () {
+        const list = document.getElementById("explore-list");
+        const mainImage = document.getElementById("explore-main-image");
+        const mainTitle = document.getElementById("explore-main-title");
+        const mainDescription = document.getElementById("explore-main-description");
+        const langButtons = Array.from(document.querySelectorAll(".lang-btn"));
+        const i18nNodes = Array.from(document.querySelectorAll("[data-i18n]"));
+        const i18nAriaNodes = Array.from(document.querySelectorAll("[data-i18n-aria]"));
+
+        if (!list || !mainImage || !mainTitle || !mainDescription) return;
+
+        const items = Array.from(list.querySelectorAll(".explore-item"));
+        let currentLang = "en";
+
+        const translations = {
+          en: {
+            brand: "BEYOND THE MUSEUM",
+            nav_home: "Home",
+            nav_journey: "The Journey",
+            nav_treasures: "Museum Treasures",
+            nav_explore: "Explore Cairo",
+            nav_best_time: "Best Time to Visit",
+            nav_legacy: "The Legacy",
+            hero_badge: "Beyond The Museum Journey",
+            hero_title: "Start Exploring Egypt From the Museum",
+            hero_subtitle:
+              "Begin your journey through Cairo, then discover the pyramids, historic streets, Nile nights, and the timeless spirit of Egypt.",
+            hero_button: "Start the Journey",
+            hero_scroll_aria: "Scroll to the journey section",
+            journey_chip: "Documentary Timeline",
+            journey_title: "A Journey Through Egyptian History",
+            journey_subtitle:
+              "The emotional heart of the journey, where each chapter reveals how Egypt carried its past into the future.",
+            chapter1_label: "Chapter I - The Beginning",
+            chapter1_title: "The Egyptian Museum in Tahrir",
+            chapter1_desc:
+              "In the heart of Cairo, the famous red building opened its doors to the world. The Egyptian Museum in Tahrir became the guardian of ancient Egyptian civilization, preserving thousands of priceless artifacts and royal treasures through time. For decades, visitors walked through its historic halls, discovering the secrets of one of the greatest civilizations in human history.",
+            chapter1_quote: "\"A hall of memory where history learned to breathe.\"",
+            chapter2_label: "Chapter II - The Royal Journey",
+            chapter2_title: "The Royal Mummies Parade",
+            chapter2_desc:
+              "After more than a century, Egypt witnessed a moment that amazed the world. Under Cairo's glowing lights, the Royal Mummies Parade moved through the streets in a breathtaking procession watched by millions worldwide. Twenty-two royal mummies were transported from the Egyptian Museum in Tahrir to the National Museum of Egyptian Civilization in a celebration worthy of kings and queens.",
+            chapter2_quote: "\"A procession of eternity beneath the lights of Cairo.\"",
+            chapter3_label: "Chapter III - A New Era",
+            chapter3_title: "The Grand Egyptian Museum",
+            chapter3_desc:
+              "Near the timeless Pyramids of Giza, a new chapter of history began. The Grand Egyptian Museum emerged as a symbol of the future, where modern architecture meets ancient heritage and advanced technology. Designed to become the largest archaeological museum dedicated to a single civilization, it continues Egypt's story for future generations.",
+            chapter3_quote: "\"The future of heritage rising beside the oldest wonders.\"",
+            treasures_chip: "Museum Collection",
+            treasures_title: "Museum Treasures",
+            treasures_subtitle: "Discover the iconic masterpieces preserved in the museum's galleries.",
+            pill_all: "All",
+            pill_kings: "Kings",
+            pill_treasures: "Treasures",
+            treasure1_title: "Tutankhamun",
+            treasure1_desc: "The golden mask of the young king remains one of the most iconic treasures of ancient Egypt.",
+            treasure2_title: "Royal Mummies",
+            treasure2_desc: "Preserved for thousands of years, the royal mummies carry the legacy of Egypt's greatest rulers.",
+            treasure3_title: "Ramses II",
+            treasure3_desc: "One of the most powerful pharaohs in Egyptian history, remembered through colossal statues and legendary temples.",
+            discover_more: "Discover More",
+            explore_chip: "Beyond The Museum",
+            explore_title: "Explore Cairo",
+            explore_subtitle: "Continue your journey through Cairo after visiting the museum.",
+            best_time_chip: "Seasonal Guide",
+            best_time_title: "Best Time to Visit Egypt",
+            best_time_subtitle:
+              "Discover the perfect seasons to experience Egypt's history, beaches, Nile cruises, and unforgettable adventures.",
+            season1_range: "October → April",
+            season2_range: "December → February",
+            season3_range: "June → August",
+            season1_desc: "Cool weather and perfect conditions for exploring Cairo, Luxor, Aswan, and desert adventures.",
+            season2_desc: "The ideal season for visiting the pyramids, temples, and enjoying Nile cruises with mild temperatures.",
+            season3_desc: "Perfect for Red Sea destinations, beach resorts, diving, and luxury summer escapes.",
+            best_for_label: "Best for:",
+            season1_best: "Historical tours & outdoor activities",
+            season2_best: "Sightseeing & Nile cruises",
+            season3_best: "Beaches & diving",
+            legacy_pretitle: "Final Chapter",
+            legacy_title: "The Legacy Lives Forever",
+            legacy_subtitle: "More than monuments… Egypt is a story written through time.",
+            legacy_button: "Explore Egypt",
+            footer_text: "A cinematic journey from the museum to the heart of Cairo."
+          },
+          ar: {
+            brand: "ما بعد المتحف",
+            nav_home: "الرئيسية",
+            nav_journey: "الرحلة",
+            nav_treasures: "كنوز المتحف",
+            nav_explore: "استكشف القاهرة",
+            nav_best_time: "أفضل وقت للزيارة",
+            nav_legacy: "الإرث",
+            hero_badge: "رحلة ما بعد المتحف",
+            hero_title: "ابدأ استكشاف مصر من المتحف",
+            hero_subtitle:
+              "ابدأ رحلتك عبر القاهرة، ثم اكتشف الأهرامات والشوارع التاريخية وليالي النيل وروح مصر الخالدة.",
+            hero_button: "ابدأ الرحلة",
+            hero_scroll_aria: "النزول إلى قسم الرحلة",
+            journey_chip: "خط زمني وثائقي",
+            journey_title: "رحلة عبر التاريخ المصري",
+            journey_subtitle:
+              "القلب العاطفي للرحلة، حيث يكشف كل فصل كيف حملت مصر ماضيها إلى المستقبل.",
+            chapter1_label: "الفصل الأول - البداية",
+            chapter1_title: "المتحف المصري بالتحرير",
+            chapter1_desc:
+              "في قلب القاهرة، فتح المبنى الأحمر الشهير أبوابه للعالم. وأصبح المتحف المصري بالتحرير حارسًا للحضارة المصرية القديمة، محافظًا على آلاف القطع الأثرية والكنوز الملكية عبر الزمن. وعلى مدار عقود، سار الزوار في قاعاته التاريخية لاكتشاف أسرار واحدة من أعظم حضارات البشرية.",
+            chapter1_quote: "\"قاعة للذاكرة حيث تعلّم التاريخ أن يتنفس.\"",
+            chapter2_label: "الفصل الثاني - الرحلة الملكية",
+            chapter2_title: "موكب المومياوات الملكية",
+            chapter2_desc:
+              "بعد أكثر من قرن، شهدت مصر لحظة أبهرت العالم. وتحت أضواء القاهرة المتوهجة، تحرك موكب المومياوات الملكية في الشوارع في مشهد مهيب تابعه الملايين حول العالم. نُقلت اثنتان وعشرون مومياء ملكية من المتحف المصري بالتحرير إلى المتحف القومي للحضارة المصرية في احتفال يليق بالملوك والملكات.",
+            chapter2_quote: "\"موكب من الخلود تحت أضواء القاهرة.\"",
+            chapter3_label: "الفصل الثالث - عصر جديد",
+            chapter3_title: "المتحف المصري الكبير",
+            chapter3_desc:
+              "بالقرب من أهرامات الجيزة الخالدة، بدأ فصل جديد من التاريخ. ظهر المتحف المصري الكبير كرمز للمستقبل، حيث تلتقي العمارة الحديثة بالتراث القديم والتقنيات المتقدمة. وقد صُمم ليكون أكبر متحف أثري مخصص لحضارة واحدة، ليستمر في سرد قصة مصر للأجيال القادمة.",
+            chapter3_quote: "\"مستقبل التراث ينهض بجوار أقدم العجائب.\"",
+            treasures_chip: "مقتنيات المتحف",
+            treasures_title: "كنوز المتحف",
+            treasures_subtitle: "اكتشف الروائع الأيقونية المحفوظة داخل قاعات المتحف.",
+            pill_all: "الكل",
+            pill_kings: "الملوك",
+            pill_treasures: "الكنوز",
+            treasure1_title: "توت عنخ آمون",
+            treasure1_desc: "قناع الملك الذهبي ما زال واحدًا من أشهر كنوز مصر القديمة.",
+            treasure2_title: "المومياوات الملكية",
+            treasure2_desc: "محفوظة منذ آلاف السنين، وتحمل إرث أعظم حكام مصر.",
+            treasure3_title: "رمسيس الثاني",
+            treasure3_desc: "أحد أقوى فراعنة مصر، تتجلى ذكراه في التماثيل الضخمة والمعابد العظيمة.",
+            discover_more: "اكتشف أكثر",
+            explore_chip: "ما بعد المتحف",
+            explore_title: "استكشف القاهرة",
+            explore_subtitle: "واصل رحلتك عبر القاهرة بعد زيارة المتحف.",
+            best_time_chip: "دليل المواسم",
+            best_time_title: "أفضل وقت لزيارة مصر",
+            best_time_subtitle:
+              "اكتشف المواسم المثالية لتجربة تاريخ مصر والشواطئ ورحلات النيل والمغامرات التي لا تُنسى.",
+            season1_range: "أكتوبر ← أبريل",
+            season2_range: "ديسمبر ← فبراير",
+            season3_range: "يونيو ← أغسطس",
+            season1_desc: "طقس لطيف وظروف مثالية لاستكشاف القاهرة والأقصر وأسوان ومغامرات الصحراء.",
+            season2_desc: "الموسم المثالي لزيارة الأهرامات والمعابد والاستمتاع برحلات النيل في أجواء معتدلة.",
+            season3_desc: "مناسب لوجهات البحر الأحمر والمنتجعات الشاطئية والغوص والإجازات الصيفية الفاخرة.",
+            best_for_label: "الأفضل لـ:",
+            season1_best: "الجولات التاريخية والأنشطة الخارجية",
+            season2_best: "المعالم السياحية ورحلات النيل",
+            season3_best: "الشواطئ والغوص",
+            legacy_pretitle: "الفصل الأخير",
+            legacy_title: "الإرث باقٍ إلى الأبد",
+            legacy_subtitle: "أكثر من مجرد آثار… مصر قصة مكتوبة عبر الزمن.",
+            legacy_button: "استكشف مصر",
+            footer_text: "رحلة سينمائية من المتحف إلى قلب القاهرة."
+          }
+        };
+
+        function getLocalizedExplore(item) {
+          if (currentLang === "ar") {
+            return {
+              title: item.dataset.titleAr || item.dataset.title || "",
+              description: item.dataset.descriptionAr || item.dataset.description || ""
+            };
+          }
+          return {
+            title: item.dataset.title || "",
+            description: item.dataset.description || ""
+          };
+        }
+
+        function setActive(item) {
+          items.forEach((btn) => btn.classList.remove("active"));
+          item.classList.add("active");
+
+          const nextImage = item.dataset.image || "";
+          const localized = getLocalizedExplore(item);
+
+          mainImage.classList.add("is-changing");
+          setTimeout(() => {
+            mainImage.src = nextImage;
+            mainImage.alt = localized.title;
+            mainTitle.textContent = localized.title;
+            mainDescription.textContent = localized.description;
+            mainImage.classList.remove("is-changing");
+          }, 170);
+        }
+
+        function applyTranslations(lang) {
+          currentLang = lang;
+          const dict = translations[lang];
+
+          i18nNodes.forEach((node) => {
+            const key = node.getAttribute("data-i18n");
+            if (key && dict[key]) node.textContent = dict[key];
+          });
+
+          i18nAriaNodes.forEach((node) => {
+            const key = node.getAttribute("data-i18n-aria");
+            if (key && dict[key]) node.setAttribute("aria-label", dict[key]);
+          });
+
+          items.forEach((item) => {
+            const titleNode = item.querySelector(".explore-item-title");
+            const localized = getLocalizedExplore(item);
+            if (titleNode) titleNode.textContent = localized.title;
+          });
+
+          document.documentElement.lang = lang === "ar" ? "ar" : "en";
+          document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+          document.body.classList.toggle("lang-ar", lang === "ar");
+
+          langButtons.forEach((btn) => {
+            btn.classList.toggle("active", btn.dataset.lang === lang);
+          });
+
+          const active = list.querySelector(".explore-item.active") || items[0];
+          if (active) setActive(active);
+        }
+
+        items.forEach((item) => {
+          item.addEventListener("mouseenter", () => setActive(item));
+          item.addEventListener("focus", () => setActive(item));
+          item.addEventListener("click", () => setActive(item));
+        });
+
+        langButtons.forEach((btn) => {
+          btn.addEventListener("click", () => applyTranslations(btn.dataset.lang || "en"));
+        });
+
+        applyTranslations("en");
+      })();
+    </script>
+  </body>
+</html>
+

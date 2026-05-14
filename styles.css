@@ -1,0 +1,892 @@
+﻿/* =========================================================
+   Egyptian Museum Cinematic Experience
+   ========================================================= */
+
+/* ---------- Base ---------- */
+:root {
+    --museum-gold: #d4af37;
+    --museum-gold-soft: #efd898;
+    --museum-ink: #090909;
+    --museum-charcoal: #121212;
+    --museum-paper: #f7f1e4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #050505;
+    color: var(--museum-paper);
+    line-height: 1.6;
+}
+
+body.lang-ar {
+    font-family: 'Tajawal', 'Poppins', sans-serif;
+}
+
+body.lang-ar h1,
+body.lang-ar h2,
+body.lang-ar h3,
+body.lang-ar .navbar-brand {
+    font-family: 'Tajawal', 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+/* ---------- Reusable cinematic helpers ---------- */
+.section-padding {
+    padding: 100px 0;
+}
+
+.section-heading h2 {
+    color: #fbf7ef;
+}
+
+.section-subtitle {
+    max-width: 760px;
+    color: #dccfb2;
+}
+
+.section-chip {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.75);
+    background: rgba(212, 175, 55, 0.12);
+    color: var(--museum-gold-soft);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.glass-card {
+    border: 1px solid rgba(212, 175, 55, 0.32);
+    border-radius: 1rem;
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.75);
+    box-shadow: 0 32px 72px rgba(0, 0, 0, 0.55);
+}
+
+.media-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+}
+
+.media-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    filter: brightness(0.85) contrast(1.05) saturate(0.95);
+    transition: transform 0.55s ease, filter 0.55s ease;
+}
+
+.media-frame:hover .media-image {
+    transform: scale(1.07);
+    filter: brightness(1) contrast(1.08) saturate(1.03);
+}
+
+.media-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.56));
+}
+
+.media-overlay.gold {
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.06), rgba(13, 10, 6, 0.64));
+}
+
+/* ---------- Navbar ---------- */
+.museum-navbar {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.museum-navbar .navbar-brand {
+    color: #f8f2e3;
+    letter-spacing: 0.05em;
+    font-size: clamp(0.88rem, 1.2vw, 1.05rem);
+}
+
+.museum-navbar .nav-link {
+    color: rgba(248, 242, 227, 0.9);
+    transition: color 0.25s ease;
+}
+
+.museum-navbar .nav-link:hover,
+.museum-navbar .nav-link:focus {
+    color: var(--museum-gold);
+}
+
+.museum-navbar .navbar-toggler {
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.language-switch {
+    display: inline-flex;
+    gap: 0.4rem;
+}
+
+.lang-btn {
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    color: #ebdbb4;
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 0.78rem;
+    line-height: 1.2;
+}
+
+.lang-btn:hover,
+.lang-btn:focus {
+    color: #fff1cc;
+    border-color: rgba(212, 175, 55, 0.75);
+}
+
+.lang-btn.active {
+    color: #16120a;
+    background: linear-gradient(145deg, #e0bd62, #cfa93d);
+    border-color: rgba(212, 175, 55, 0.9);
+}
+
+/* ---------- Hero ---------- */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at 18% 20%, rgba(212, 175, 55, 0.22), transparent 44%),
+        radial-gradient(circle at 86% 22%, rgba(212, 175, 55, 0.16), transparent 40%),
+        linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.74)),
+        url("images/egypt.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 55%, transparent 36%, rgba(0, 0, 0, 0.48) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    padding-top: 4.5rem;
+}
+
+.hero-content > * {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: revealUp 0.9s ease forwards;
+}
+
+.hero-badge {
+    background: rgba(212, 175, 55, 0.16);
+    border: 1px solid rgba(212, 175, 55, 0.75);
+    color: var(--museum-gold-soft);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+}
+
+.hero-title {
+    color: #fbf6ea;
+    font-size: clamp(2rem, 5vw, 4.25rem);
+    line-height: 1.1;
+    max-width: 16ch;
+    text-wrap: balance;
+}
+
+.hero-subtitle {
+    color: rgba(248, 242, 227, 0.9);
+    font-size: clamp(1rem, 1.45vw, 1.25rem);
+    max-width: 58ch;
+}
+
+.hero-cta-btn {
+    background: linear-gradient(145deg, #e0bd62, var(--museum-gold));
+    border: 1px solid rgba(212, 175, 55, 0.85);
+    color: #1a160d;
+    font-weight: 700;
+    border-radius: 999px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.hero-cta-btn:hover,
+.hero-cta-btn:focus {
+    transform: translateY(-3px);
+    color: #1a160d;
+    filter: brightness(1.05);
+    box-shadow: 0 20px 36px rgba(0, 0, 0, 0.45);
+}
+
+.hero-content .hero-badge {
+    animation-delay: 0.04s;
+}
+
+.hero-content .hero-title {
+    animation-delay: 0.16s;
+}
+
+.hero-content .hero-subtitle {
+    animation-delay: 0.28s;
+}
+
+.hero-content .hero-cta-btn {
+    animation-delay: 0.4s;
+}
+
+.hero-scroll-indicator {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 2.1rem;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 50px;
+    border: 1px solid rgba(212, 175, 55, 0.7);
+    border-radius: 999px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 9px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-scroll-indicator span {
+    width: 5px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--museum-gold-soft);
+    animation: scrollNudge 1.35s ease-in-out infinite;
+}
+
+@keyframes scrollNudge {
+    0% { transform: translateY(0); opacity: 0.9; }
+    60% { transform: translateY(13px); opacity: 0.35; }
+    100% { transform: translateY(0); opacity: 0.9; }
+}
+
+/* ---------- Timeline ---------- */
+.timeline-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 44%),
+        radial-gradient(circle at 86% 20%, rgba(212, 175, 55, 0.1), transparent 42%),
+        linear-gradient(160deg, #090909 0%, #111111 46%, #17120b 100%);
+}
+
+/* Smooth visual transition between story chapters */
+.timeline-section,
+.wonders-section,
+.nearby-section,
+.best-time-section,
+.legacy-section {
+    border-top: 1px solid rgba(212, 175, 55, 0.14);
+}
+
+.timeline-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.42) 100%);
+}
+
+.timeline-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-list {
+    position: relative;
+    display: grid;
+    gap: 2.6rem;
+}
+
+.story-card {
+    padding: 1.55rem;
+}
+
+.story-card h3 {
+    color: #fff8ea;
+}
+
+.story-card p {
+    color: #e6dbc4;
+    line-height: 1.85;
+    font-size: 1.02rem;
+}
+
+.year-badge {
+    display: inline-block;
+    padding: 0.38rem 0.9rem;
+    border-radius: 999px;
+    background: linear-gradient(145deg, #e0bd62, #b78f2f);
+    color: #19170f;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+}
+
+.chapter-label {
+    color: #c9b27b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.timeline-quote {
+    margin-top: 1rem;
+    padding-top: 0.95rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.26);
+    color: #d7c08a;
+    font-style: italic;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+}
+
+.timeline-item:nth-child(1).reveal-up {
+    animation-delay: 0.05s;
+}
+
+.timeline-item:nth-child(2).reveal-up {
+    animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(3).reveal-up {
+    animation-delay: 0.35s;
+}
+
+/* ---------- Nearby Places ---------- */
+.nearby-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 16%, rgba(212, 175, 55, 0.1), transparent 42%),
+        radial-gradient(circle at 84% 20%, rgba(212, 175, 55, 0.08), transparent 40%),
+        linear-gradient(180deg, #0e0e0e 0%, #121212 100%);
+}
+
+.nearby-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.nearby-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.explore-stage {
+    display: grid;
+    gap: 1rem;
+    height: 100%;
+}
+
+.explore-image-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.1rem;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 24px 54px rgba(0, 0, 0, 0.5);
+}
+
+.explore-main-image {
+    width: 100%;
+    min-height: 360px;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    filter: brightness(0.87) contrast(1.05) saturate(0.96);
+    transform: scale(1.02);
+    transition: opacity 0.28s ease, transform 0.8s ease, filter 0.6s ease;
+}
+
+.explore-main-image.is-changing {
+    opacity: 0.28;
+}
+
+.explore-image-wrap:hover .explore-main-image {
+    transform: scale(1.07);
+    filter: brightness(0.98) contrast(1.08) saturate(1.04);
+}
+
+.explore-image-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.5));
+}
+
+.explore-caption {
+    padding: 1.15rem 1.1rem;
+}
+
+.explore-caption h3 {
+    color: #fff8ea;
+}
+
+.explore-caption p {
+    color: #dfd2b8;
+}
+
+.explore-list {
+    display: grid;
+    gap: 0.62rem;
+}
+
+.explore-item {
+    width: 100%;
+    text-align: left;
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 0.8rem;
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    color: #efe1c4;
+    padding: 0.85rem 0.95rem;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.explore-item:hover,
+.explore-item:focus {
+    border-color: rgba(212, 175, 55, 0.65);
+    transform: translateX(4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.34);
+}
+
+.explore-item.active {
+    border-color: rgba(212, 175, 55, 0.8);
+    background: linear-gradient(150deg, rgba(212, 175, 55, 0.2), rgba(255, 255, 255, 0.04));
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25), 0 14px 28px rgba(0, 0, 0, 0.36);
+}
+
+.explore-item-title {
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+/* ---------- Wonders ---------- */
+.wonders-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 84% 16%, rgba(212, 175, 55, 0.13), transparent 40%),
+        radial-gradient(circle at 8% 26%, rgba(212, 175, 55, 0.08), transparent 42%),
+        linear-gradient(160deg, #090909 0%, #101010 45%, #18130c 100%);
+}
+
+.wonders-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.wonders-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.wonders-pills {
+    position: relative;
+    z-index: 1;
+}
+
+.wonders-pill {
+    padding: 0.38rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #e8d8b2;
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.wonders-pill.active {
+    border-color: rgba(212, 175, 55, 0.78);
+    background: rgba(212, 175, 55, 0.14);
+}
+
+.wonder-card {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.32);
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+    box-shadow: 0 22px 54px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.wonder-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.72);
+    box-shadow: 0 30px 68px rgba(0, 0, 0, 0.54), 0 0 36px rgba(212, 175, 55, 0.14);
+}
+
+.wonder-body {
+    padding: 1.35rem 1.2rem 1.4rem;
+}
+
+.wonder-body h3 {
+    color: #fff8ea;
+}
+
+.wonder-body p {
+    color: #e3d7c0;
+}
+
+.wonder-btn {
+    border: 1px solid rgba(212, 175, 55, 0.56);
+    color: #e6d2a2;
+    border-radius: 999px;
+    padding: 0.38rem 0.88rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.wonder-btn:hover,
+.wonder-btn:focus {
+    color: #13110b;
+    background: var(--museum-gold);
+    border-color: var(--museum-gold);
+}
+
+/* ---------- Legacy ---------- */
+.best-time-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 18% 16%, rgba(212, 175, 55, 0.12), transparent 42%),
+        radial-gradient(circle at 84% 18%, rgba(212, 175, 55, 0.1), transparent 40%),
+        linear-gradient(160deg, #0a0a0a 0%, #111111 46%, #17120b 100%);
+}
+
+.best-time-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 36%, rgba(0, 0, 0, 0.38) 100%);
+}
+
+.best-time-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.best-time-pills .nav-link {
+    border: 1px solid rgba(212, 175, 55, 0.38);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #e8d8b2;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    padding: 0.52rem 1rem;
+    transition: all 0.25s ease;
+}
+
+.best-time-pills .nav-link:hover,
+.best-time-pills .nav-link:focus {
+    border-color: rgba(212, 175, 55, 0.72);
+    color: #f3e1b7;
+}
+
+.best-time-pills .nav-link.active {
+    border-color: rgba(212, 175, 55, 0.85);
+    background: linear-gradient(145deg, rgba(212, 175, 55, 0.28), rgba(255, 255, 255, 0.06));
+    color: #fff2cf;
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25), 0 12px 26px rgba(0, 0, 0, 0.35);
+}
+
+.season-panel {
+    border: 1px solid rgba(212, 175, 55, 0.34);
+    border-radius: 1rem;
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+    box-shadow: 0 22px 56px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    padding: 1rem;
+}
+
+.season-media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+.season-image {
+    width: 100%;
+    min-height: 340px;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    filter: brightness(0.86) contrast(1.04) saturate(0.95);
+    transition: transform 0.55s ease, filter 0.55s ease;
+}
+
+.season-panel:hover .season-image {
+    transform: scale(1.08);
+    filter: brightness(0.99) contrast(1.08) saturate(1.04);
+}
+
+.season-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.04), rgba(9, 7, 4, 0.54));
+}
+
+.season-body {
+    padding: 0.35rem 0.35rem 0.35rem 0.15rem;
+}
+
+.season-body h3 {
+    color: #fff8ea;
+}
+
+.season-body p {
+    color: #e3d7bf;
+}
+
+.season-best {
+    color: #d9c08a;
+    font-size: 0.94rem;
+}
+
+.season-best span {
+    color: #f0dbad;
+    font-weight: 600;
+}
+
+/* ---------- Legacy ---------- */
+.legacy-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at 52% 46%, rgba(212, 175, 55, 0.16), transparent 42%),
+        linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.78)),
+        url("images/cairo-tower.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.legacy-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 32%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.legacy-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+.legacy-pretitle {
+    color: var(--museum-gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.82rem;
+}
+
+.legacy-title {
+    font-size: clamp(2rem, 5vw, 3.7rem);
+    color: #fbf6e9;
+}
+
+.legacy-subtitle {
+    color: rgba(248, 242, 227, 0.9);
+    font-size: clamp(1.02rem, 1.5vw, 1.25rem);
+}
+
+/* ---------- Footer ---------- */
+.museum-footer {
+    background: #070707;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.museum-footer p {
+    color: #d7c59d;
+    letter-spacing: 0.02em;
+}
+
+/* ---------- Reveal animation ---------- */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: revealUp 0.95s ease forwards;
+}
+
+@keyframes revealUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll-linked reveal where supported */
+@supports (animation-timeline: view()) {
+    .reveal-up {
+        animation-timeline: view();
+        animation-range: entry 12% cover 34%;
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+    .section-padding {
+        padding: 84px 0;
+    }
+
+    .timeline-list {
+        gap: 2rem;
+    }
+
+    .story-card {
+        padding: 1.25rem;
+    }
+
+    .media-image {
+        aspect-ratio: 16 / 10;
+    }
+
+    .season-image {
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .museum-navbar .navbar-collapse {
+        background: rgba(7, 7, 7, 0.94);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 0.75rem;
+        margin-top: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .hero-section,
+    .legacy-section {
+        background-attachment: scroll;
+    }
+
+    .hero-content {
+        padding-top: 5.5rem;
+    }
+
+    .section-padding {
+        padding: 72px 0;
+    }
+
+    .hero-scroll-indicator {
+        bottom: 1.45rem;
+    }
+}
+
+/* ---------- RTL readiness ---------- */
+[dir="rtl"] .hero-content,
+[dir="rtl"] .section-heading,
+[dir="rtl"] .story-card,
+[dir="rtl"] .explore-caption,
+[dir="rtl"] .explore-item,
+[dir="rtl"] .season-body,
+[dir="rtl"] .wonder-body,
+[dir="rtl"] .legacy-content {
+    text-align: right;
+}
+
+[dir="rtl"] .hero-scroll-indicator {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+[dir="rtl"] .explore-item:hover,
+[dir="rtl"] .explore-item:focus {
+    transform: translateX(-4px);
+}
+
+[dir="rtl"] .navbar-nav {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal-up,
+    .hero-content > *,
+    .glass-card,
+    .media-image,
+    .wonder-card,
+    .hero-cta-btn,
+    .hero-scroll-indicator span,
+    .explore-main-image,
+    .explore-item {
+        animation: none;
+        transition: none;
+        transform: none;
+        opacity: 1;
+    }
+}
