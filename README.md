@@ -2,6 +2,8 @@
 
 Cinematic Egypt tourism landing page built with **HTML**, **CSS**, **Bootstrap 5**, and minimal **JavaScript**.
 
+![BEYOND THE MUSEUM](images/BEYOND%20THE%20MUSEUM.png)
+
 ## Overview
 
 This project presents a storytelling journey:
@@ -55,4 +57,3 @@ Example with VS Code Live Server:
 ## Author
 
 Created as a learning project by Eman.
-
