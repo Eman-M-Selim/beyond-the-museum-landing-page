@@ -2,6 +2,10 @@
 
 Cinematic Egypt tourism landing page built with **HTML**, **CSS**, **Bootstrap 5**, and minimal **JavaScript**.
 
+## 🌐 Live Demo
+
+[View beyond-the-museum](https://eman-m-selim.github.io/beyond-the-museum-landing-page/)
+
 ![BEYOND THE MUSEUM](images/BEYOND%20THE%20MUSEUM.png)
 
 ## Overview
